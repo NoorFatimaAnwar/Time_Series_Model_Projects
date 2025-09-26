@@ -1,115 +1,88 @@
-# 📊 Sales Price Prediction & Analysis
+# 📈 Stock Price Forecasting (Tesla - TSLA)
 
-This project predicts **product sales based on advertising budgets** (TV, Radio, Newspaper) using machine learning models.  
-It also provides **feature importance analysis**, **what-if budget scenarios**, and an **interactive prediction tool**.
-
----
-
-## 🚀 Features
-
-- **Baseline Model** – Simple mean-based predictor  
-- **ML Models** – Linear Regression, Ridge Regression, Support Vector Machine (SVM)  
-- **Evaluation** – Metrics (MAE, RMSE, R²) + Actual vs Predicted plots  
-- **Feature Importance** – Using permutation importance  
-- **Scenario Analysis** – Simulate budget changes (e.g., +10% TV, -20% Newspaper)  
-- **Interactive Prediction** – Enter your own ad spend to predict sales  
+This project demonstrates **time series forecasting** of Tesla stock prices using **ARIMA and SARIMA models**.  
+The workflow covers data preprocessing, model selection, evaluation, and visualization of predictions.  
 
 ---
 
-## 🗂️ Project Structure
-├── data/
-
-│ └── Advertising.csv # Dataset
-
-├── src/
-
-│ ├── preprocess.py # Load, split, scale data
-
-│ ├── baseline.py # Baseline model
-
-│ ├── models.py # Train models (LR, Ridge, SVM)
-
-│ ├── evaluation.py # Metrics + plots
-
-│ ├── feature_importance.py # Permutation importance
-
-│ ├── predict.py # Predict sales for user inputs
-
-│ ├── scenario.py # Budget adjustment scenarios
-
-├── notebook/
-
-│ ├── Sales_Prediction.ipynb # Main notebook (analysis + demo)
-  
-└── README.md # Project documentation
+## 🚀 Project Overview
+- Load Tesla stock dataset (`TSLA.csv`)
+- Preprocess data (remove unused columns, set Date as index)
+- Train/Test split (80/20)
+- Apply **ARIMA** and **SARIMA** models
+- Evaluate performance using **RMSE, MAE, MAPE**
+- Implement **rolling forecast** for higher accuracy
+- Interactive function to **predict next close price**
 
 ---
 
-## 📦 Dependencies
-
-- pandas  
-- numpy  
-- scikit-learn  
-- matplotlib  
-- ipywidgets (for interactive input in Jupyter Notebook)  
-
----
-
-## ▶️ Usage
-
-### 1. Run Jupyter Notebook
-```bash
-jupyter notebook Sales_Prediction.ipynb
+## 📂 Repository Structure
 ```
-### 2. Predict Sales (Interactive)
-Inside the notebook, enter **TV, Radio, and Newspaper ad spends** → get predicted sales instantly.
-
-### 3. Scenario Analysis
-Test budget changes like:
-- 📺 **+10% TV**  
-- 📰 **-20% Newspaper**  
-- 📻 **+10% Radio**  
-- 📺 **+10% TV** & 📻 **+15% Radio**  
-- 💰 **-10% All spends**  
+├── stock_forecasting.ipynb   # Jupyter/Colab notebook with full code
+├── TSLA.csv                  # Dataset (Tesla stock prices)
+└── README.md                 # Project documentation
+```
 
 ---
 
-## 📈 Results
+## 🛠️ Requirements
+Install dependencies before running the notebook:
 
-- **Baseline model** → acts as benchmark  
-- **SVM model** → best performance (lowest RMSE, highest R²)  
-- **TV & Radio** → most important features  
-- **TV + Radio budgets** → biggest improvement in predicted sales  
+```bash
+pip install numpy==1.26.4
+pip install pmdarima
+pip install statsmodels
+pip install scikit-learn
+pip install matplotlib seaborn pandas
+```
+
+---
+
+## ▶️ How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/Stock-Forecasting.git
+   cd Stock-Forecasting
+   ```
+
+2. Open the notebook in **Google Colab** or **Jupyter Notebook**:
+   ```bash
+   jupyter notebook stock_forecasting.ipynb
+   ```
+
+3. Upload the dataset (`TSLA.csv`) when prompted (if not already in the folder).
+
+4. Run all cells to train the models and view results.
 
 ---
 
-## 📊 Business Insights & Recommendations
+## 📊 Results & Evaluation
+The notebook compares **ARIMA** and **SARIMA** models.  
 
-Based on scenario testing with the trained model:
+Evaluation metrics:
+- **RMSE** (Root Mean Squared Error)  
+- **MAE** (Mean Absolute Error)  
+- **MAPE** (Mean Absolute Percentage Error)  
 
-- 📺 **TV advertising has the strongest impact on sales**  
-  +10% TV spend → **+0.53 higher average sales**  
-
-- 📻 **Radio advertising is highly effective**  
-  +10% Radio spend → **+0.44 higher sales**  
-
-- 🔗 **Combining TV and Radio yields the best results**  
-  +10% TV & +15% Radio → **+1.22 higher sales** (synergy effect)  
-
-- 📰 **Newspaper advertising has minimal effect**  
-  –20% Newspaper spend → only **–0.02 change in sales**  
-
-- 💰 **Budget cuts directly reduce sales**  
-  –10% across all channels → **–1.00 drop in sales**  
-
-### ✅ Recommendations for Businesses
-- Invest more in **TV and Radio advertising** (highest returns)  
-- Reduce **Newspaper ad spend**, reallocate to TV/Radio  
-- Use a **combined TV + Radio strategy** for maximum impact  
-- Avoid **across-the-board budget cuts**  
-- Follow a **data-driven marketing approach** with continuous monitoring  
+📌 Example visualization of forecasts:
+- Train vs Test split  
+- Forecasted vs Actual closing prices  
+- Rolling Forecast for 1-step ahead prediction  
 
 ---
+
+## 🔮 Future Work
+- Experiment with **Prophet** (Facebook/Meta) for stock forecasting  
+- Use external features (technical indicators, macroeconomic factors)  
+- Deploy model as a **Flask API** or **Streamlit App**  
+
+---
+
+## 📌 Disclaimer
+This project is for **educational purposes only**.  
+Stock price forecasting is highly uncertain and should **not** be used for financial decisions.  
+
 
 ## 🙌 Author
 
