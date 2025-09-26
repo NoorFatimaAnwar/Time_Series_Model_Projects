@@ -42,7 +42,7 @@ pip install matplotlib seaborn pandas
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/Stock-Forecasting.git
+   git clone https://github.com/NoorFatimaAnwar/Time_Series_Model_Projects.git
    cd Stock-Forecasting
    ```
 
@@ -82,7 +82,9 @@ Evaluation metrics:
 ## 📌 Disclaimer
 This project is for **educational purposes only**.  
 Stock price forecasting is highly uncertain and should **not** be used for financial decisions.  
-
+---
+## ✨ Author
+👩‍💻 Developed by **Noor Fatima**  
 
 ## 🙌 Author
 
