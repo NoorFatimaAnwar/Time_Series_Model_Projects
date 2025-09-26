@@ -78,15 +78,11 @@ Evaluation metrics:
 - Deploy model as a **Flask API** or **Streamlit App**  
 
 ---
-
 ## 📌 Disclaimer
-This project is for **educational purposes only**.  
-Stock price forecasting is highly uncertain and should **not** be used for financial decisions.  
+This Project is for **educational Purpose only**.
+Stock price forcasting is highly uncertain and should **not** be used for finnacial decision.
+
 ---
 ## ✨ Author
 👩‍💻 Developed by **Noor Fatima**  
 
-## 🙌 Author
-
-**Developed by Noor Fatima**  
-🎓 Final-year Computer Science Student | Data Science Projects  
